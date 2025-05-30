@@ -1136,6 +1136,7 @@ font-size: 20px;
 
   #menu-button {
     display: flex;
+    transform: translateX(-130%);
   }
 
   #sidebar {
@@ -1157,9 +1158,13 @@ font-size: 20px;
     width: 100%;
     padding: 10px;
   }
+  .container-cards{
+    transform: translateY(5%);
+  }
 
   .row-cards {
-    width: 100%;
+    width: 55%;
+    margin-bottom: 10px;
   }
 
   .ninth-row img,

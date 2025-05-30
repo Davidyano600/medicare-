@@ -7,10 +7,13 @@
     
     
 }
-html{
-    width: 100vh;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
-
 
 
 .curtain{
@@ -73,6 +76,10 @@ width: 100vh;
 
     float: left;
     margin-top: 10px;
+}
+.bottom-header > ul:not(#sidebar) {
+    display: flex;
+    gap: 15px;
 }
 .bottom-header ul{
     display: flex;
@@ -151,7 +158,7 @@ transition: 1s ;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: #7da9d4;
-    backdrop-filter: 10s blur;
+    backdrop-filter: blur(10s);
     width: 100%;
     height: 100vh;
     z-index: 1;
@@ -1063,146 +1070,123 @@ font-size: 20px;
   background-color: #0056b3;
 }
 
+@media (max-width: 1024px) and (orientation: landscape) {
+  .bottom-header ul li a {
+    display: none;
+  }
 
-
-
-@media(max-width: 767px){
-    #links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    
-.bottom-header ul li a{
-display:none;
-
-}
-#menu-button{
-    display: block;
-}
-#sidebar a{
+  #menu-button {
     display: flex;
-}.container-cards{
-    position: relative;
-    margin-top: 40PX;
-}
-#greater-than{
-    margin-left: auto;
-}
-.third-icons{
-    flex-wrap: wrap;
-}
-.sixth-cards{
-    width: 100%;
-}
-.ninth-row img{
-    width: 400px;
-    height: 120px;
-}
-.tenth-card input{
-    width: 100%;
-}
-.tenth-link {
-    display: block;
-}
-.wo-card button{
-    width: 100%;
-}
-.wo-card input{
-    width: 100%;
-    margin-bottom: 15px;
-}
-.last-card{
-    width: 100%;
-}
-.last-card ul{
-    height: auto;
-    flex-wrap: nowrap;
-}
-.row-cards {
-    width: 80%;
+  }
 
-}
-.container-cards{
+  #sidebar {
+    display: none;
+
+  }
+
+  #sidebar a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+  }
+
+  .row-cards,
+  .container-cards {
+    width: 100%;
+    padding: 10px;
     transform: translateY(0);
-}
-    
+  }
 
-}
+  .third-icons {
+    flex-wrap: wrap;
+  }
 
-@media (max-width: 2000px) and (orientation: landscape) {
-    
+  .ninth-row img,
+  .tenth-card input,
+  .wo-card input,
+  .wo-card button {
+    width: 100%;
+  }
 
-    .bottom-header ul li a {
-        display: none;
-        
-    }
-   
+  .wo-card input {
+    margin-bottom: 10px;
+  }
 
-    #menu-button {
-        display: flex;
-
-        
-    }
-
-    #sidebar a {
-        display: flex;
-    }
-
-    .container-cards {
-        position: relative;
-        margin-top: 20px; /* less spacing in landscape */
-        padding: 10px;
-        transform: translateY(-5%);
-    }
-
-    .third-icons {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .sixth-cards,
-    .last-card,
-    .wo-card input,
-    .wo-card button,
-    .tenth-card input {
-        width: 100%;
-    }
-
-    .ninth-row img {
-        width: 100%; /* make responsive */
-        height: auto;
-        max-height: 150px;
-        object-fit: contain;
-    }
-
-    .last-card ul {
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-
-    .row-cards {
-        width: 60%;
-        margin: 10 auto;
-    }
-
-    .tenth-link {
-        display: block;
-    }
-
-    .wo-card input {
-        margin-bottom: 10px;
-    }
-
-
-    html{
-        width: 100%;
-    }
-
-    
+  .last-card ul {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
 }
 
 
+
+@media (max-width: 850px) {
+  #links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .bottom-header ul li a {
+    display: none;
+  }
+
+  #menu-button {
+    display: flex;
+  }
+
+  #sidebar {
+    display: flex;
+
+  }
+  #sidebar a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  .container-cards,
+  .third-icons,
+  .cards-top,
+  .fourth-card {
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .row-cards {
+    width: 100%;
+  }
+
+  .ninth-row img,
+  .tenth-card input,
+  .wo-card input,
+  .wo-card button {
+    width: 100%;
+  }
+
+  .wo-card input {
+    margin-bottom: 15px;
+  }
+
+  .tenth-link,
+  .last-card {
+    width: 100%;
+    display: block;
+  }
+
+  .last-card ul {
+    flex-wrap: wrap;
+  }
+
+  #greater-than {
+    margin-left: auto;
+  }
+}
 
 @keyframes rotate{
     100%{transform:rotateZ(360deg)

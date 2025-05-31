@@ -20,7 +20,7 @@ html, body {
 position:absolute;
 top: 0;
 width: 50%;
-height: 100%;
+height: 100vh;
 background-color: #1A76D1;
 z-index: 2;
 width: 100vh;
@@ -37,19 +37,8 @@ width: 100vh;
 }
 
 .banner{
-    background-image: url(img/slider.jpg);
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     position: relative;
-    margin-top: none;
     overflow: hidden;
-
-    
-    
-    
-
 }
 .top-header{
   border-bottom: 1px solid rgba(128, 128, 128, 0.521);
@@ -123,9 +112,6 @@ width: 100vh;
     
 }
 
-    
-
-
 .bottom-header ul li a::after{
     content: "";
     bottom: 0;
@@ -187,30 +173,51 @@ transition: 1s ;
 #menu-button{
 display:none ;
 color: #1A76D1;
+font-size: 24px;
+color: #1A76D1;
+cursor: pointer;
+  
+}
+.slide{
+position: relative;
+width: 100%;
+overflow: hidden;
+}
+
+.slides-wrapper {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 100%;
 }
 .body-text{
-   transform: translateY(50%);
-    margin: 20px;
+   background-image: url(img/slider.jpg);
+   background-position: center;
+   background-size: cover;
     width: 100%;
-   
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     flex: 0 0 100%;
+  
 }
 .body-text span{
     color: #1A76D1;
 }
-.body-text p{
-    width: 100%;
-}
+
 
 .body-text h2{
     font-family: 'Times New Roman', Times, serif;
     padding:20px;
     font-size: 2rem;
-    margin-left: 60px;
+    margin-left: 100px;
     animation-name: Slideup;
     animation-duration:2s;
-    
+    color: hsl(0, 0%, 20%);
 
-
+}
+.body-text p span{
+    margin-left: 100px;
 }
 .body-text a{
     color:black;
@@ -224,23 +231,29 @@ color: #1A76D1;
     color: white;
     border: none;
 }
-#less-than{
- display: flex;
+#Prev{
  float: left;
  background-color: #1A76D1;
  color: white;
- margin-right: 30px;
- margin-left: 20px;
+ margin-right: 20px;
+ border: none;
  padding: 15px;
- border-radius: 25%;
+ border-radius: 40%;
  
-
 }
-#links{
-    
+
+#next{
+    border-radius: 40%;
+    background-color: #1A76D1;
+    margin-left:auto;
+    border: none;
+    padding: 15px;
+   color: white;
+}
+#links{   
     padding: 10px 15px;
-    margin-top: 30px;
-    margin-left: 100px;
+    margin-top: 20px;
+    margin-left:100px;
     animation-name: Slideup;
     animation-duration:2s;
     
@@ -248,9 +261,7 @@ color: #1A76D1;
 #links a:first-child{
     background-color:#1A76D1;
     padding: 15px;
-    margin-right: 20px;
     border: none;
-    width: 100%;
     color: #fff;
     transition: 1s ease-in-out;
 }
@@ -259,17 +270,15 @@ color: #1A76D1;
     color: #1A76D1;
   
 }
-
-#greater-than{
-    border-radius: 25%;
-    background-color: #1A76D1;
-    margin-left:auto;
-    margin-right: 30px;
-    padding: 15px;
-   color: white;
+#links a:last-child{
+    background-color: hsl(0, 0%, 40%);
+    color: white;
+    border: none;
 }
+
 .body-text p{
     display: flex;
+    margin: 0 15px;
     animation-name: Slideup;
     animation-duration:2s;
 }
@@ -281,8 +290,6 @@ color: #1A76D1;
     border: none;
     width: 100%;
    transform: translateY(-18%);
-    
-    
     
 }
 .row-cards{
@@ -334,9 +341,6 @@ color: #1A76D1;
 }
 .time-sidual span{
   float: right;
-  
- 
-  
 }
 
 .time-sidual ul{
@@ -412,10 +416,6 @@ margin-bottom: 20px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-   
-
-    
 }
 .third-icons{
     display: flex;
@@ -424,11 +424,6 @@ margin-bottom: 20px;
     width: 100%;
     height: 100%;
     padding:20px;
-    
-    
-    
-    
-   
 }
 .third-text{
     margin-right: 20px ;
@@ -437,8 +432,6 @@ margin-bottom: 20px;
     align-items: center;
     width: 60%;
     height: 100px;
-    
-    
 }
 .third-text i{
     font-size: 1.5em;
@@ -454,10 +447,8 @@ margin-bottom: 20px;
     background-color: white;
 }
 .third-text p{
-    
     margin-top: 5px;
     color: #fff;
-    
 }
 .third-text h2{
     color: #fff;
@@ -478,15 +469,11 @@ margin-bottom: 20px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
-    
 }
 .fourth-content{
     width: 500px;
-    
     margin-right: 25px;
     margin-bottom: 35px;
-    
 }
 .img-four{
     width: 500px;
@@ -544,9 +531,6 @@ margin-bottom: 20px;
 .fourth-content ul li {
     margin-top: 5px;
 }
-
-
-    
 .fa-play{
     font-size: 5px;
     background-color: #1A76D1;
@@ -561,8 +545,7 @@ margin-bottom: 20px;
     padding: 100px 0;
     background-color: #1A76D1;
     text-align: center;
-   
-    width: 100%;
+   width: 100%;
     
 }
 .emergency h1{
@@ -937,24 +920,15 @@ font-size: 20px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-  
-
 }
 .last-card{
-    
     margin-right: 25px;
     width: 250px;
-    margin-bottom: 20px;
-    
-    
-    
+    margin-bottom: 20px;    
 }
 .last-card h2{
     font-size: 1.5em;
-    
 }
-
-
 .last-header {
     position: relative;
     padding: 10px;
@@ -1069,6 +1043,23 @@ font-size: 20px;
 #scrollToTopBtn:hover {
   background-color: #0056b3;
 }
+#claaa{
+    color:#333
+}
+#getPro{
+    position: fixed;
+    right: 0;
+    top: 100px;
+    background-color: #1A76D1;
+    color: white;
+    text-align: center;
+    width: 80px;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 6px 0px 0px 6px ;
+    box-shadow: 0px 2px 2px 3px #1A76D1;
+
+}
 
 @media (max-width: 1024px) and (orientation: landscape) {
   .bottom-header ul li a {
@@ -1124,20 +1115,55 @@ font-size: 20px;
 
 
 @media (max-width: 850px) {
-  #links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .bottom-header ul li a {
+    #Prev, #next {
     display: none;
   }
 
-  #menu-button {
-    display: flex;
-    transform: translateX(-130%);
+  .slides-wrapper {
+    transition: transform 0.8s ease-in-out;
   }
+
+  .body-text {
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .body-text h2,
+  .body-text p span,
+  #links {
+    margin-left: 0 !important;
+    width: 100%;
+    max-width: 100%;
+  }
+  #main-nav{
+    display: none
+  }
+    
+  #links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   align-items: center;
+   width: 100%;
+  }
+  #links a{
+ max-width: 300px ;
+ padding: 10px;
+ margin: 5px 0 ;
+  }
+  .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+}
+   #menu-button {
+    display:flex;
+   
+  }
+
 
   #sidebar {
     display: flex;
@@ -1163,7 +1189,7 @@ font-size: 20px;
   }
 
   .row-cards {
-    width: 55%;
+    width: 65%;
     margin-bottom: 10px;
   }
 
@@ -1187,10 +1213,11 @@ font-size: 20px;
   .last-card ul {
     flex-wrap: wrap;
   }
-
-  #greater-than {
-    margin-left: auto;
+  .body-text{
+    height: auto;
   }
+
+  
 }
 
 @keyframes rotate{

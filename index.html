@@ -28,40 +28,61 @@
             </ul>
             
         </nav>
-        <nav class="bottom-header"  id="stickyNav">
-                <img src="img/logo.png" alt="">
-                <ul id="sidebar">
-                    <li onclick=hideSidebar()><i class="fas fa-times"></i></li>
-                    <li><a href="">Doctors</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Pages</a></li>
-                    <li><a href="">Blogs</a></li>
-                    <li><a href="appointment.html"> book appointment</a></li>
-                   
-                </ul>
-               
-    
-               <ul>
+        <nav class="bottom-header" id="stickyNav">
+            <div class="nav-container">
+              <img src="img/logo.png" alt="Logo" class="logo">
+           <div id="menu-button" onclick="showSidebar()"><i class="fas fa-bars"></i></div>
+         
+               <ul id="main-nav">
                 <li> <a href="" id="active">Home</a></li>
                 <li><a href="">Doctors</a></li>
                 <li><a href="">Services</a></li>
                 <li><a href="">Pages</a></li>
                 <li><a href="">Blogs</a></li>
                 <li><a href="appointment.html"> book appointment</a></li>
-                <li id="menu-button" onclick=showSidebar()><i class="fas fa-bars" style="float: right;"></i></li>
+                
             </ul>
+             <ul id="sidebar">
+                    <li onclick=hideSidebar()><i class="fas fa-times"></i></li>
+                    <li><a href="">Doctors</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Pages</a></li>
+                    <li><a href="">Blogs</a></li>
+                    <li><a href="appointment.html"> book appointment</a></li>
+                </ul>
+            </div>
         </nav>
-        <div class="body-text">
-            <h2> We Provide <span> Medical </span>Services that <br> you can <span> Trust!</span> </h2>
-            <p><span id="less-than"><</span>Lorem ipsum sci ipsam obcaecati quos velit eius voluptate esse dolore quia neque dolorem aliquam ut dolorum, ex maxime ab. <span id="greater-than">></span></p>
-          <div id="links"> <a href="appointment.html">Get appointment</a>
-            <a href=""> LEARN MORE</a>
-        </div>
+       <div class="slide">
+  <div class="slides-wrapper">
+    <div class="body-text"> <!-- Slide 1 -->
+      <h2> We Provide <span> Medical </span>Services that <br> you can <span> Trust!</span> </h2>
+      <p><button id="Prev">&#10094</button><span id="claaa">Lorem ipsum sci ipsam obcaecati...</span><button id="next">&#10095</button></p>
+      <div id="links">
+        <a href="appointment.html">Get appointment</a>
+        <a href=""> LEARN MORE</a>
+      </div>
     </div>
 
-    
-        
+    <div class="body-text" style="background-image:url(img/slider2.jpg)"> <!-- Slide 2 -->
+       <h2> We Provide <span> Medical </span>Services that <br> you can <span> Trust!</span> </h2>
+      <p><button id="Prev">&#10094</button><span id="claaa">Lorem ipsum sci ipsam obcaecati...</span><button id="next">&#10095</button></p>
+      <div id="links">
+        <a href="appointment.html">Get appointment</a>
+        <a href=""> LEARN MORE</a>
+      </div>
     </div>
+
+    <div class="body-text" style="background-image:url(img/slider3.jpg)"> <!-- Slide 3 -->
+       <h2> We Provide <span> Medical </span>Services that <br> you can <span> Trust!</span> </h2>
+      <p><button id="Prev">&#10094</button><span id="claaa">Lorem ipsum sci ipsam obcaecati...</span><button id="next">&#10095</button></p>
+      <div id="links">
+        <a href="appointment.html">Get appointment</a>
+        <a href=""> LEARN MORE</a>
+      </div>
+    </div>
+  </div>
+</div>
+ <div id="getPro">  Get pro</div>
     <section class="container-cards">
         
             <div class="row-cards">
@@ -550,53 +571,6 @@
             </footer>
                
        
-    <script>
-        function showSidebar(){
-            const sidebar = document.querySelector('#sidebar')
-            sidebar.style.display = 'flex'
-            
-        }
-        function hideSidebar(){
-            const sidebar = document.querySelector('#sidebar')
-            sidebar.style.display = 'none'
-            
-        } 
-              window.addEventListener('DOMContentLoaded', () => {
-             document.getElementById('sidebar').style.display = 'none'; 
-              });
-        
-
-        const stickyNav = document.getElementById('stickyNav');
-        const topHeader = document.querySelector('.top-header');
-        const topHeaderHeight = topHeader.offsetHeight;
-
-        window.addEventListener('scroll', () => {
-        if (window.scrollY > topHeaderHeight) {
-         stickyNav.classList.add('sticky');
-       topHeader.style.display = 'none';
-        } else {
-       stickyNav.classList.remove('sticky');
-      topHeader.style.display = 'flex';
-    }
-    });
-    
-  // Show button when scrolled down
-  window.onscroll = function () {
-    const btn = document.getElementById("scrollToTopBtn");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
-
-  // Scroll to top when clicked
-  document.getElementById("scrollToTopBtn").onclick = function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-
-
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -9,13 +9,25 @@
     <title>Book Now</title>
 </head>
 <body>
+    <nav style="display: flex; justify-content: space-between; " class="bottom-header"  id="stickyNav">
+              <a href="index.html">  <img src="img/logo.png" alt=""></a> 
+                <ul id="sidebar">
+                    <li onclick=hideSidebar()><i class="fas fa-times"></i></li>
+                    <li><a href="">Doctors</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Pages</a></li>
+                    <li><a href="">Blogs</a></li>
+                    <li><a href="appointment.html"> book appointment</a></li>
+                   
+                </ul>
+               
+               <ul>
+                
+                <li style="float: right;" onclick=showSidebar()><i class="fas fa-bars" style="float: right;"></i></li>
+            </ul>
+        </nav>
     
-        <nav class="bottom-header" style="position: fixed; z-index: 1000; top: 0; width: 100%;" >
-         <ul>
-           <li><img src="img/logo.png" alt=""></li>
-        </ul>
-    
-    </nav>
+       
     
     <section class="fifth" style="padding-bottom: 0;" >
         <h1>We Are Always Ready to Help You. Book An
@@ -136,5 +148,26 @@
             <p>© Copyright 2018 | All Rights Reserved by wpthemesgrid.com</p>
         </div>
     </footer>
+
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('#sidebar')
+            sidebar.style.display = 'flex'
+            
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('#sidebar')
+            sidebar.style.display = 'none'
+            
+        } 
+
+        window.addEventListener('DOMContentLoaded' , () =>{
+        document.getElementById('sidebar').style.display = 'none';
+        });
+        
+             
+        
+            
+    </script>
 </body>
 </html>

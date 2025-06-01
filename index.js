@@ -42,63 +42,58 @@ function showSidebar(){
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   
-  const slidesWrapper = document.querySelector(".slides-wrapper");
-  const slides = document.querySelectorAll(".body-text");
-  let currentIndex = 0;
+   const slideWrapper = document.querySelector(".slides-wrapper");
+ const slides = document.querySelectorAll(".body-text");
   const totalSlides = slides.length;
-  let autoSlideCount = 0;
-  const maxAutoSlides = totalSlides - 1;
+ let slideIndex = 0;
+ let autoSlideCount = 0;
+ let maxAutoSlides = totalSlides - 1;
 
-  function updateSlidePosition() {
-    slidesWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateSlidePosition();
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateSlidePosition();
-  }
-
-  document.querySelectorAll("#next").forEach(btn => {
-    btn.addEventListener("click", nextSlide);
-  });
+ function updateSlidePosition(){
+  slideWrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
+ }
+ function nextSlide() {
+  slideIndex = (slideIndex + 1) % totalSlides;
+  updateSlidePosition();
+ }
+ function prevSlide(){
+  slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+  updateSlidePosition();
+ }
 
   document.querySelectorAll("#Prev").forEach(btn => {
     btn.addEventListener("click", prevSlide);
+  });
+document.querySelectorAll("#next").forEach(btn => {
+    btn.addEventListener("click", nextSlide);
   });
 
   function autoSlideLoop() {
     setInterval(() => {
       nextSlide();
-    }, 4000); 
+    }, 4000);
   }
-
   function autoSlideOnce() {
     const interval = setInterval(() => {
-      if (autoSlideCount < maxAutoSlides) {
+       if(autoSlideCount < maxAutoSlides) {
         nextSlide();
         autoSlideCount++;
-      } else {
+       }
+       else{
         clearInterval(interval);
-      }
+       }
     }, 3000);
   }
+    function initSlider() {
+      updateSlidePosition();
 
-  function initSlider() {
-    updateSlidePosition();
+      if(window.innerWidth <= 850) {
+        autoSlideLoop();
+      }
+      else{
+         autoSlideOnce();
+      }
+    };
 
-    if (window.innerWidth <= 850) {
-      autoSlideLoop(); 
-      autoSlideOnce(); 
-    }
-  }
-
-  window.addEventListener("load", initSlider);
-
- 
-  
+window.addEventListener("load", initSlider);
 

@@ -6,6 +6,7 @@ function showSidebar(){
         function hideSidebar(){
             const sidebar = document.querySelector('#sidebar')
             sidebar.style.display = 'none'
+            sidebar.style.behavior = 'smooth'
             
         } 
               window.addEventListener('DOMContentLoaded', () => {
@@ -27,7 +28,7 @@ function showSidebar(){
     }
     });
     
-  // Show button when scrolled down
+
   window.onscroll = function () {
     const btn = document.getElementById("scrollToTopBtn");
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -96,4 +97,9 @@ document.querySelectorAll("#next").forEach(btn => {
     };
 
 window.addEventListener("load", initSlider);
+const slidePanel = document.getElementById('slidePanel');
+const getProBtn = document.getElementById('getProBtn');
 
+getProBtn.addEventListener('click', () => {
+  slidePanel.classList.toggle('collapsed');
+});

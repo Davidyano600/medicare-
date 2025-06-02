@@ -145,10 +145,16 @@ transition: 1s ;
     align-items: flex-start;
     background-color: #7da9d4;
     backdrop-filter: blur(10s);
-    width: 50%;
+    width: 0;
     height: 100vh;
     z-index: 6;
+    transition: all 1s ease ;
     
+    
+}
+#sidebar.winner{
+  width: 60%;
+  
 }
 #sidebar li{
     
@@ -412,7 +418,7 @@ margin-bottom: 20px;
 .third_section{
 
     padding:100px 0;
-    background-image:linear-gradient(rgba(13, 82, 231, 0.521)), url('img/fun-bg.jpg');
+    background:linear-gradient(rgba(13, 82, 231, 0.521)), url('img/fun-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1053,6 +1059,7 @@ font-size: 20px;
   z-index: 1;
   transition: all 1s;
 
+  
 }
 
 
@@ -1097,8 +1104,7 @@ font-size: 20px;
 }
 .slide-panel.collapsed .subscription-card{
     display: flex;
-    transition: 2s;
-    behavior: smooth;
+    
 }
 
 @media (max-width: 1024px) and (orientation: landscape) {
@@ -1232,7 +1238,15 @@ font-size: 20px;
     width: 65%;
     margin-bottom: 10px;
   }
+  .third_section{
 
+    padding:100px 0;
+    background:url('img/fun-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
   .ninth-row img,
   .tenth-card input,
   .wo-card input,

@@ -44,6 +44,10 @@ width: 100vh;
   border-bottom: 1px solid rgba(128, 128, 128, 0.521);
   background-color: #fff;
   width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  
 }
 .top-header ul{
     display: flex;
@@ -84,6 +88,7 @@ width: 100vh;
     box-shadow: 3px 5px 5px gray;
     position: relative;
     transition: 0.4s;
+    padding: 0 25px;
 
 }
 .sticky{
@@ -149,7 +154,6 @@ transition: 1s ;
     height: 100vh;
     z-index: 6;
     transition: all 1s ease ;
-    
     
 }
 
@@ -1185,6 +1189,15 @@ font-size: 20px;
     align-items: center;
     text-align: center;
   }
+  .top-header {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.521);
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  justify-content: center;
+}
 
   .body-text h2,
   .body-text p span,
@@ -1219,6 +1232,9 @@ font-size: 20px;
    #menu-button {
     display:flex;
    
+  }
+  .top-header ul li:last-child{
+    margin-left: 0px;
   }
 
 
